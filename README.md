@@ -1,6 +1,6 @@
 # RPi_Benchmarks
 
-This repository contains benchmarks that measure the performance and efficiency of different operations on the Raspberry Pi family. The benchmarks are available [here](https://github.com/kpanda254/QPU_Benchmarks/tree/main/benchmark_results).
+This repository contains benchmarks that measure the performance and efficiency of the Raspberry Pi family. The benchmarks are available [here](https://github.com/kpanda254/QPU_Benchmarks/tree/main/benchmark_results).
 
 ## Device Information
 
