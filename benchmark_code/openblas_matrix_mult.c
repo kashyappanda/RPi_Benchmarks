@@ -1,5 +1,14 @@
 // to compile: gcc openblas-sgemm.c -lopenblas -lm
 
+/*
+ * Copyright (c) 2016 Idein Inc. ( http://idein.jp/ )
+ * All rights reserved.
+ *
+ * This software is licensed under a Modified (3-Clause) BSD License.
+ * You should have received a copy of this license along with this
+ * software. If not, contact the copyright holder above.
+ */
+
 #include <cblas.h>
 #include <stdio.h>
 #include <stdlib.h>
