@@ -16,13 +16,17 @@ The Raspberry Pi 3 Model B+ also contains 12 QPUs in the same grouping. The QPUs
 
 Each CPU core in the Raspberry Pi 3 Model B+ also contains a NEON SIMD Unit, which is simply an additional 16-way SIMD unit separate from each of the QPUs. It has its own instruction set and shares memory with the CPU.
 
-## Benchmark Process
+## Benchmarks
 
-Currently, the only operation present in this benchmark is matrix multiplication. Matrix multiplication is achieved on the QPU through the use and modification of the [QMKL](https://github.com/Idein/qmkl) library. The benchmark outputs the time taken to multiply the matrices at various row and column sizes.
+Important Note: Currently, the only operation present in this benchmark is matrix multiplication, but more will be added in the future.
+
+### SGEMM (Matrix Multiplication)
+
+Matrix multiplication is achieved on the QPU through the use and modification of [QMKL](https://github.com/Idein/qmkl), which is a Math Kernel Library for the QPU.
 
 Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication performance on the QPU is compared with the performance of the NEON SIMD Unit, through the use of [OpenBLAS](https://www.openblas.net/), which utilizes the NEON SIMD unit.
 
-### Requirements
+## Requirements
 
 - Running the benchmarks
 
