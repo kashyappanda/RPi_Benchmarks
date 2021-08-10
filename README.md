@@ -1,10 +1,10 @@
-# QPU_Benchmarks
+# RPi_Benchmarks
 
-This repository contains benchmarks that measure the performance of the Quad Processing Unit (QPU) in the Raspberry Pi family. The benchmarks are available [here](https://github.com/kpanda254/QPU_Benchmarks/tree/main/benchmark_results).
+This repository contains benchmarks that measure the performance and efficiency of different operations on the Raspberry Pi family. The benchmarks are available [here](https://github.com/kpanda254/QPU_Benchmarks/tree/main/benchmark_results).
 
 ## Device Information
 
-The benchmarks are performed on the Raspberry Pi Zero W and the Raspberry Pi 3 Model B+. Both models contain Quad Processing Units (QPUs) that act as 16-way 32 bit SIMD processors. A SIMD processor can process multiple values with a single instruction. In this case, a QPU can process 16 values. A single QPU processes all 16 units in 4 clock cycles, with 4 units per clock cycle, and can sometimes deliver 2 results at a time.
+The benchmarks are performed on the Raspberry Pi Zero W and the Raspberry Pi 3 Model B+. Both models contain Quad Processing Units (QPUs) that act as 16-way 32 bit [SIMD processors](https://en.wikipedia.org/wiki/SIMD). In this case, a QPU can process 16 values. A single QPU processes all 16 units in 4 clock cycles, with 4 units per clock cycle, and can sometimes deliver 2 results at a time.
 
 ### Raspberry Pi Zero W
 
@@ -24,7 +24,7 @@ Important Note: Currently, the only operation present in this benchmark is matri
 
 Matrix multiplication is achieved on the QPU through the use and modification of [QMKL](https://github.com/Idein/qmkl), which is a Math Kernel Library for the QPU.
 
-Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication performance on the QPU is compared with the performance of the NEON SIMD Unit, through the use of [OpenBLAS](https://www.openblas.net/), which utilizes the NEON SIMD unit.
+Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchmark is also run on the NEON SIMD Unit through the use of [OpenBLAS](https://www.openblas.net/).
 
 ## Requirements
 
