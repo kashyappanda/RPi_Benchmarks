@@ -41,6 +41,9 @@ Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchma
   - [Pandas](https://pandas.pydata.org/)
 
 ## Next Steps
+- Add benchmarks in flop/s
+
+- Measure power usage alongside benchmarks
 
 - Add more operations to the benchmarks besides matrix multiplication
 
