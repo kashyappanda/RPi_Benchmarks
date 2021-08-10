@@ -44,4 +44,4 @@ Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchma
 
 - Add more operations to the benchmarks besides matrix multiplication
 
-- Add benchmarks for [Tensorflow](https://www.tensorflow.org/) and [Pytorch](https://pytorch.org/) for the NEON SIMD units.
+- Add benchmarks using [Tensorflow](https://www.tensorflow.org/) and [Pytorch](https://pytorch.org/) for the NEON SIMD units.
