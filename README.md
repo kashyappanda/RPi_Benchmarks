@@ -34,7 +34,7 @@ Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication perform
 
   - [NumPy](https://numpy.org/)
 
-  - [Pandas)](https://pandas.pydata.org/)
+  - [Pandas](https://pandas.pydata.org/)
 
 ## Next Steps
 
