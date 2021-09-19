@@ -1,6 +1,4 @@
-# Benchmark Results
-
-## SGEMM (Matrix Multiplication)
+# SGEMM (Matrix Multiplication)
 
 ### Methodology
 - Multiply two matrices together
