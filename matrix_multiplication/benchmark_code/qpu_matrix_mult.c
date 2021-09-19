@@ -15,6 +15,8 @@
 #include <sys/time.h>
 #include <omp.h>
 
+#define BUFSIZE 128
+
 #if 0
 #define DO_1FILL
 #endif
@@ -54,6 +56,44 @@ static void mf_init_random(float *p, const int height, const int width)
 }
 
 #endif /* DO_1FILL */
+
+int print_um25c(int row) {
+    char *cmd = "sudo rdserialtool --device=um25c --bluetooth-address=00:16:A6:00:13:2B --quiet --json";    
+
+    FILE * fPtr;
+    fPtr = fopen("data.txt", "a");
+
+    char buf[BUFSIZE];
+    FILE *fp;
+
+    if ((fp = popen(cmd, "r")) == NULL) {
+        printf("Error opening pipe!\n");
+        return -1;
+    }
+
+    if (fPtr != NULL) {
+        fputs("\"", fPtr);
+        fprintf(fPtr, "%d", row);
+        fputs("\": ", fPtr);
+    }
+
+    while (fgets(buf, BUFSIZE, fp) != NULL) {
+        // Do whatever you want here...
+        printf("%s", buf);
+        if (fPtr != NULL) {
+            fputs(buf, fPtr);
+        }
+    }
+
+    if(pclose(fp))  {
+        printf("Command not found or exited with error status\n");
+        return -1;
+    }
+
+    fclose(fPtr);
+
+    return 0;
+}
 
 int run_sgemm(const unsigned P_val, const unsigned Q_val)
 {
@@ -112,8 +152,12 @@ int run_sgemm(const unsigned P_val, const unsigned Q_val)
 int main() {
     for (int i = 1; i <= 2000; i++) {
         const unsigned rows = i;
+        int write_rows = i;
         const unsigned columns = 64;
 
         run_sgemm(rows, columns);
+        print_um25c(write_rows);
     }
+
+    return 0;
 }
