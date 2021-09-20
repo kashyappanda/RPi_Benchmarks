@@ -26,6 +26,10 @@ Matrix multiplication is achieved on the QPU through the use and modification of
 
 Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchmark is also run on the NEON SIMD Unit through the use of [OpenBLAS](https://www.openblas.net/).
 
+### Tensorflow
+
+Tensorflow Lite is only being benchmarked on the Raspberry Pi 3, due the lack of availability of NEON SIMD units on the Raspberry Pi Zero. The benchmark uses the [built-in performance measurement tool](https://www.tensorflow.org/lite/performance/measurement), which provides inference time, overall resource usage, and other statistics.
+
 ## Requirements
 
 - Running the benchmarks
