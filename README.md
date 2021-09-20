@@ -41,10 +41,8 @@ Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchma
   - [Pandas](https://pandas.pydata.org/)
 
 ## Next Steps
-- Add benchmarks in flop/s
+- Flops/watt for matrix multiplication (Raspberry Pi 0 and 3)
 
-- Measure power usage alongside benchmarks
+- Add average inference time for Tensorflow Lite (Raspberry Pi 3)
 
-- Add more operations to the benchmarks besides matrix multiplication
-
-- Add benchmarks using [Tensorflow](https://www.tensorflow.org/) and [Pytorch](https://pytorch.org/) for the NEON SIMD units.
+- Convolutoin benchmarks (Raspberry Pi 0 and 3)
