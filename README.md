@@ -18,17 +18,11 @@ Each CPU core in the Raspberry Pi 3 Model B+ also contains a NEON SIMD Unit, whi
 
 ## Benchmarks
 
-Important Note: Currently, the only operation present in this benchmark is matrix multiplication, but more will be added in the future.
-
 ### SGEMM (Matrix Multiplication)
 
 Matrix multiplication is achieved on the QPU through the use and modification of [QMKL](https://github.com/Idein/qmkl), which is a Math Kernel Library for the QPU.
 
 Additionally, for the Raspberry Pi 3 Model B+, the matrix multiplication benchmark is also run on the NEON SIMD Unit through the use of [OpenBLAS](https://www.openblas.net/).
-
-### Tensorflow
-
-Tensorflow Lite is only being benchmarked on the Raspberry Pi 3, due the lack of availability of NEON SIMD units on the Raspberry Pi Zero. The benchmark uses the [built-in performance measurement tool](https://www.tensorflow.org/lite/performance/measurement), which provides inference time, overall resource usage, and other statistics.
 
 ## Requirements
 
@@ -45,8 +39,8 @@ Tensorflow Lite is only being benchmarked on the Raspberry Pi 3, due the lack of
   - [Pandas](https://pandas.pydata.org/)
 
 ## Next Steps
-- Flops/watt for matrix multiplication (Raspberry Pi 0 and 3)
+- Flops/Watt for matrix multiplication (Raspberry Pi 4)
 
-- Add average inference time for Tensorflow Lite (Raspberry Pi 3)
+- Add average inference time for Tensorflow Lite (Raspberry Pi 3 and 4)
 
-- Convolutoin benchmarks (Raspberry Pi 0 and 3)
+- Benchmark [gradient boosting](https://github.com/szilard/benchm-ml) (Raspberry Pi 4)
