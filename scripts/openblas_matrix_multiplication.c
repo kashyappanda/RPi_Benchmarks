@@ -8,20 +8,23 @@
 #include <sys/time.h>
 #include <omp.h>
 
-static float random_decimal() {
+// Returns a random float by dividing random() by the RAND_MAX constant
+static float random_float() {
     return random() / (float) RAND_MAX;
 }
 
+// Fills in the matrix with the given width and height with a random number
 static void fill_matrix(float *p, const int height, const int width) {
     int i, j;
 
     for (i = 0; i < height; i ++) {
         for (j = 0; j < width; j ++) {
-            p[i * width + j] = cosf(2.0 * M_PI * random_decimal()) * sqrtf(-2.0 * logf(1.0 - random_decimal()));
+            p[i * width + j] = cosf(2.0 * M_PI * random_float()) * sqrtf(-2.0 * logf(1.0 - random_float()));
         }
     }
 }
 
+// Writes out performance data to a text file in JSON format
 int write_data(int row) {
     char *cmd = "sudo rdserialtool --device=um25c --bluetooth-address=00:16:A6:00:13:2B --quiet --json";
 
@@ -57,6 +60,8 @@ int write_data(int row) {
     return 0;
 }
 
+// Runs QPU-accelerated SGEMM (Single precision, GEneral Matrix Multiply) as C = A * B
+// Prints out the FLOP/s for analysis
 int run_sgemm(const unsigned rows, const unsigned columns) {
     float *A, *B, *C;
     struct timeval start, end, tv;
@@ -89,6 +94,7 @@ int run_sgemm(const unsigned rows, const unsigned columns) {
     return 0;
 }
 
+// Main driver, runs SGEMM and varies the rows from 64 to 2048
 int main() {
     for (int i = 64; i <= 2048; i = i * 2) {
         const unsigned rows = i;
